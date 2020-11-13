@@ -42,12 +42,12 @@
 				"userProperties": [],
 				"typeProperties": {
 					"items": {
-						"value": "@activity('Lookup1').output.TABLE_NAME",
+						"value": "@activity('Lookup1').output.value",
 						"type": "Expression"
 					},
 					"activities": [
 						{
-							"name": "Copy data1",
+							"name": "Copy to Blob",
 							"type": "Copy",
 							"dependsOn": [],
 							"policy": {
@@ -108,7 +108,79 @@
 									"type": "DatasetReference",
 									"parameters": {
 										"CSVName": {
-											"value": "@item().CSVName",
+											"value": "@item().CSV_NAME",
+											"type": "Expression"
+										}
+									}
+								}
+							]
+						},
+						{
+							"name": "Copy to SQL",
+							"type": "Copy",
+							"dependsOn": [
+								{
+									"activity": "Copy to Blob",
+									"dependencyConditions": [
+										"Succeeded"
+									]
+								}
+							],
+							"policy": {
+								"timeout": "7.00:00:00",
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"source": {
+									"type": "DelimitedTextSource",
+									"storeSettings": {
+										"type": "AzureBlobStorageReadSettings",
+										"recursive": true
+									},
+									"formatSettings": {
+										"type": "DelimitedTextReadSettings"
+									}
+								},
+								"sink": {
+									"type": "AzureSqlSink"
+								},
+								"enableStaging": false,
+								"translator": {
+									"type": "TabularTranslator",
+									"typeConversion": true,
+									"typeConversionSettings": {
+										"allowDataTruncation": true,
+										"treatBooleanAsNumber": false
+									}
+								}
+							},
+							"inputs": [
+								{
+									"referenceName": "DynamicBlobCSV",
+									"type": "DatasetReference",
+									"parameters": {
+										"CSVName": {
+											"value": "@item().CSV_NAME",
+											"type": "Expression"
+										}
+									}
+								}
+							],
+							"outputs": [
+								{
+									"referenceName": "DynamicSQLTable",
+									"type": "DatasetReference",
+									"parameters": {
+										"TableName": {
+											"value": "@item().TABLE_NAME",
+											"type": "Expression"
+										},
+										"SchemaName": {
+											"value": "@item().TABLE_SCHEMA",
 											"type": "Expression"
 										}
 									}
