@@ -173,7 +173,7 @@
 						"type": "DatasetReference",
 						"parameters": {
 							"DatabaseName": {
-								"value": "@pipeline().parameters.DatabaseName",
+								"value": "@pipeline().globalParameters.DatabaseName",
 								"type": "Expression"
 							}
 						}
@@ -181,11 +181,6 @@
 				]
 			}
 		],
-		"parameters": {
-			"DatabaseName": {
-				"type": "string"
-			}
-		},
 		"annotations": [],
 		"lastPublishTime": "2020-11-12T14:51:40Z"
 	},
