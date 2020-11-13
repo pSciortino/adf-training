@@ -4,7 +4,7 @@
 		"globalParameters": {
 			"DatabaseName": {
 				"type": "string",
-				"value": "myBestTeam"
+				"value": "databaseMain"
 			}
 		}
 	},
