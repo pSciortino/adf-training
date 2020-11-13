@@ -1,5 +1,5 @@
 {
-	"name": "LocalAttendeesCSV",
+	"name": "psciortinoLocalAttendeesCSV",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "psciortinoLinkedService",
