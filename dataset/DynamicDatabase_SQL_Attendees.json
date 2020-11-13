@@ -1,9 +1,20 @@
 {
-	"name": "AzureSqlTable1",
+	"name": "DynamicDatabase_SQL_Attendees",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "Dynamic_AzureSqlDatabase",
-			"type": "LinkedServiceReference"
+			"type": "LinkedServiceReference",
+			"parameters": {
+				"DatabaseName": {
+					"value": "@dataset().DatabaseName",
+					"type": "Expression"
+				}
+			}
+		},
+		"parameters": {
+			"DatabaseName": {
+				"type": "string"
+			}
 		},
 		"annotations": [],
 		"type": "AzureSqlTable",

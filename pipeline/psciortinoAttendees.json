@@ -57,7 +57,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "psciortinoLocalAttendees",
+						"referenceName": "psciortinoLocalAttendeesCSV",
 						"type": "DatasetReference"
 					}
 				],
@@ -169,12 +169,23 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "psciortinoSQLDBAttendees",
-						"type": "DatasetReference"
+						"referenceName": "DynamicDatabase_SQL_Attendees",
+						"type": "DatasetReference",
+						"parameters": {
+							"DatabaseName": {
+								"value": "@pipeline().parameters.DatabaseName",
+								"type": "Expression"
+							}
+						}
 					}
 				]
 			}
 		],
+		"parameters": {
+			"DatabaseName": {
+				"type": "string"
+			}
+		},
 		"annotations": [],
 		"lastPublishTime": "2020-11-12T14:51:40Z"
 	},
