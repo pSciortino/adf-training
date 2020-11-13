@@ -1,0 +1,35 @@
+{
+	"name": "AzureSqlTable1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Dynamic_AzureSqlDatabase",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "Name",
+				"type": "nvarchar"
+			},
+			{
+				"name": "B&D Newcomer? (y/n)",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Previous Knowledge of ADF? (y/n)",
+				"type": "nvarchar"
+			},
+			{
+				"name": "SnapshotDateTime",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "Attendees"
+		}
+	}
+}
