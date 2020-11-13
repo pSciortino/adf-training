@@ -1,0 +1,12 @@
+{
+	"name": "RetrieveListOfTables",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Main_AzureSqlDatabase",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": []
+	}
+}
