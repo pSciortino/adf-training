@@ -1,5 +1,5 @@
 {
-	"name": "DynamicSQLTable",
+	"name": "DynamicTable_SQL_Table",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "Main_AzureSqlDatabase",

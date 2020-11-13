@@ -92,7 +92,7 @@
 							},
 							"inputs": [
 								{
-									"referenceName": "DynamicLocalCSV",
+									"referenceName": "DynamicTable_Local_CSV",
 									"type": "DatasetReference",
 									"parameters": {
 										"FileName": {
@@ -104,7 +104,7 @@
 							],
 							"outputs": [
 								{
-									"referenceName": "DynamicBlobCSV",
+									"referenceName": "DynamicTable_Blob_CSV",
 									"type": "DatasetReference",
 									"parameters": {
 										"CSVName": {
@@ -160,7 +160,7 @@
 							},
 							"inputs": [
 								{
-									"referenceName": "DynamicBlobCSV",
+									"referenceName": "DynamicTable_Blob_CSV",
 									"type": "DatasetReference",
 									"parameters": {
 										"CSVName": {
@@ -172,7 +172,7 @@
 							],
 							"outputs": [
 								{
-									"referenceName": "DynamicSQLTable",
+									"referenceName": "DynamicTable_SQL_Table",
 									"type": "DatasetReference",
 									"parameters": {
 										"TableName": {
