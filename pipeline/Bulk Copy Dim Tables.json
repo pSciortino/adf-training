@@ -1,5 +1,5 @@
 {
-	"name": "Bulk Copy",
+	"name": "Bulk Copy Dim Tables",
 	"properties": {
 		"activities": [
 			{
