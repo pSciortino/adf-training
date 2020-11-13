@@ -1,5 +1,5 @@
 {
-	"name": "DynamicCSV",
+	"name": "DynamicLocalCSV",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "psciortinoLinkedService",
