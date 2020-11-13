@@ -1,0 +1,36 @@
+{
+	"name": "psciortinoLocalAttendees",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "psciortinoLinkedService",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "FileServerLocation",
+				"fileName": "Attendees.csv"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "Name",
+				"type": "String"
+			},
+			{
+				"name": "B&D Newcomer? (y/n)",
+				"type": "String"
+			},
+			{
+				"name": "Previous Knowledge of ADF? (y/n)",
+				"type": "String"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

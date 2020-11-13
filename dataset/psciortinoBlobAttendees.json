@@ -1,0 +1,42 @@
+{
+	"name": "psciortinoBlobAttendees",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "Patrick Sciortino.txt",
+				"folderPath": "Attendees",
+				"container": "adf-traning"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "Name",
+				"type": "String"
+			},
+			{
+				"name": "B&D Newcomer? (y/n)",
+				"type": "String"
+			},
+			{
+				"name": "Previous Knowledge of ADF? (y/n)",
+				"type": "String"
+			},
+			{
+				"name": "SnapshotTime",
+				"type": "String"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
