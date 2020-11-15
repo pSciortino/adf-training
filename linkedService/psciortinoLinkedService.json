@@ -5,9 +5,9 @@
 		"annotations": [],
 		"type": "FileServer",
 		"typeProperties": {
-			"host": "C:\\Users\\psciortino\\OneDrive - Business & Decision Benelux S.A\\Documents\\Data Factory bootcamp\\Data",
+			"host": "C:\\Users\\psciortino\\OneDrive - Business & Decision Benelux S.A\\Documents\\Data Factory bootcamp\\",
 			"userId": "ADFLUX\\psciortino",
-			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiJkMzU0OTU2My1hMmY4LTRhOTEtYThlNy1lZmY2MTY3NGQ1YzQiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiJmYTA4N2RlMy1iYWUxLTQwZDgtYjhhNi1hNGM2MjIyZjAxZjIiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
 		},
 		"connectVia": {
 			"referenceName": "psciortinoIntegrationRuntime",
