@@ -17,7 +17,10 @@
 				"typeProperties": {
 					"source": {
 						"type": "AzureSqlSource",
-						"sqlReaderQuery": "select \n    TABLE_SCHEMA, \n    TABLE_NAME, \n    CONCAT(LEFT(TABLE_NAME, CHARINDEX('_',TABLE_NAME) - 1), '.csv') as CSV_NAME\nfrom databaseMain.INFORMATION_SCHEMA.tables\nwhere TABLE_NAME like '%LZ'",
+						"sqlReaderQuery": {
+							"value": "select \n    TABLE_SCHEMA, \n    TABLE_NAME, \n    CONCAT(LEFT(TABLE_NAME, CHARINDEX('_',TABLE_NAME) - 1), '.csv') as CSV_NAME\nfrom @{pipeline().globalParameters.DatabaseName}.INFORMATION_SCHEMA.tables\nwhere TABLE_NAME like '%LZ'",
+							"type": "Expression"
+						},
 						"queryTimeout": "02:00:00",
 						"partitionOption": "None"
 					},
