@@ -1,0 +1,12 @@
+{
+	"name": "adf101factory",
+	"properties": {
+		"globalParameters": {
+			"DatabaseName": {
+				"type": "string",
+				"value": "databaseMain"
+			}
+		}
+	},
+	"location": "westeurope"
+}
