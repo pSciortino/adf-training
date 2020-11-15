@@ -10,7 +10,8 @@
 		"typeProperties": {
 			"location": {
 				"type": "FileServerLocation",
-				"fileName": "Attendees.csv"
+				"fileName": "Attendees.csv",
+				"folderPath": "Demo"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
