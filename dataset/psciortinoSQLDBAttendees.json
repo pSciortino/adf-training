@@ -2,7 +2,7 @@
 	"name": "psciortinoSQLDBAttendees",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "AzureSqlDatabase1",
+			"referenceName": "Main_AzureSqlDatabase",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
