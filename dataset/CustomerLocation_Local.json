@@ -1,20 +1,20 @@
 {
-	"name": "psciortinoLocalAttendeesCSV",
+	"name": "CustomerLocation_Local",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "psciortinoLinkedService",
 			"type": "LinkedServiceReference"
 		},
 		"folder": {
-			"name": "demo_Attendees"
+			"name": "demo_Mapping dataflow"
 		},
 		"annotations": [],
 		"type": "DelimitedText",
 		"typeProperties": {
 			"location": {
 				"type": "FileServerLocation",
-				"fileName": "Attendees.csv",
-				"folderPath": "Demo"
+				"fileName": "CustomerLocation.csv",
+				"folderPath": "Demo/Mapping dataflow"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
@@ -23,18 +23,33 @@
 		},
 		"schema": [
 			{
-				"name": "Name",
+				"name": "CustomerID",
 				"type": "String"
 			},
 			{
-				"name": "B&D Newcomer? (y/n)",
+				"name": "AddressID",
 				"type": "String"
 			},
 			{
-				"name": "Previous Knowledge of ADF? (y/n)",
+				"name": "AddressType",
+				"type": "String"
+			},
+			{
+				"name": "ModifiedDate",
+				"type": "String"
+			},
+			{
+				"name": "CountryRegion",
+				"type": "String"
+			},
+			{
+				"name": "StateProvince",
+				"type": "String"
+			},
+			{
+				"name": "City",
 				"type": "String"
 			}
 		]
-	},
-	"type": "Microsoft.DataFactory/factories/datasets"
+	}
 }

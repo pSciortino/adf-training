@@ -5,6 +5,9 @@
 			"referenceName": "Main_AzureSqlDatabase",
 			"type": "LinkedServiceReference"
 		},
+		"folder": {
+			"name": "demo_Attendees"
+		},
 		"annotations": [],
 		"type": "AzureSqlTable",
 		"schema": [],

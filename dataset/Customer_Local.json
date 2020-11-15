@@ -1,9 +1,12 @@
 {
-	"name": "psciortinoCustomer",
+	"name": "Customer_Local",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "psciortinoLinkedService",
 			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "demo_Mapping dataflow"
 		},
 		"annotations": [],
 		"type": "DelimitedText",
