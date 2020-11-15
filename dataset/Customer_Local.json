@@ -23,6 +23,10 @@
 		},
 		"schema": [
 			{
+				"name": "CustomerID",
+				"type": "String"
+			},
+			{
 				"name": "Title",
 				"type": "String"
 			},
@@ -68,6 +72,10 @@
 			},
 			{
 				"name": "rowguid",
+				"type": "String"
+			},
+			{
+				"name": "ModifiedDate",
 				"type": "String"
 			}
 		]
