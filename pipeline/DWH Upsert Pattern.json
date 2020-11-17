@@ -1,9 +1,9 @@
 {
-	"name": "UPSERT Pattern",
+	"name": "DWH Upsert Pattern",
 	"properties": {
 		"activities": [
 			{
-				"name": "dataflow1",
+				"name": "Upsert to DWH",
 				"type": "ExecuteDataFlow",
 				"dependsOn": [],
 				"policy": {

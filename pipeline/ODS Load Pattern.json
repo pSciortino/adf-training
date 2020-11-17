@@ -5,14 +5,7 @@
 			{
 				"name": "Truncate-Insert",
 				"type": "Copy",
-				"dependsOn": [
-					{
-						"activity": "Get Last Modified Timestamp",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
+				"dependsOn": [],
 				"policy": {
 					"timeout": "7.00:00:00",
 					"retry": 0,
@@ -26,11 +19,8 @@
 						"type": "DelimitedTextSource",
 						"additionalColumns": [
 							{
-								"name": "SnapshotDateTime",
-								"value": {
-									"value": "@{activity('Get Last Modified Timestamp').output.created}",
-									"type": "Expression"
-								}
+								"name": "FilePath",
+								"value": "$$FILEPATH"
 							}
 						],
 						"storeSettings": {
@@ -204,40 +194,6 @@
 					"storeSettings": {
 						"type": "AzureBlobStorageReadSettings",
 						"recursive": false
-					}
-				}
-			},
-			{
-				"name": "Get Last Modified Timestamp",
-				"type": "GetMetadata",
-				"dependsOn": [],
-				"policy": {
-					"timeout": "7.00:00:00",
-					"retry": 0,
-					"retryIntervalInSeconds": 30,
-					"secureOutput": false,
-					"secureInput": false
-				},
-				"userProperties": [],
-				"typeProperties": {
-					"dataset": {
-						"referenceName": "DL_New",
-						"type": "DatasetReference",
-						"parameters": {
-							"folderName": {
-								"value": "@pipeline().parameters.folderName",
-								"type": "Expression"
-							}
-						}
-					},
-					"fieldList": [
-						"lastModified"
-					],
-					"storeSettings": {
-						"type": "AzureBlobStorageReadSettings"
-					},
-					"formatSettings": {
-						"type": "DelimitedTextReadSettings"
 					}
 				}
 			}
