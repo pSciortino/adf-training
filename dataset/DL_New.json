@@ -1,5 +1,5 @@
 {
-	"name": "DL_ODS",
+	"name": "DL_New",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureBlobStorage1",
@@ -19,7 +19,7 @@
 			"location": {
 				"type": "AzureBlobStorageLocation",
 				"folderPath": {
-					"value": "@dataset().folderName",
+					"value": "@{dataset().folderName}/New",
 					"type": "Expression"
 				},
 				"container": "haulotte-tests"

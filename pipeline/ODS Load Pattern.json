@@ -1,5 +1,5 @@
 {
-	"name": "ODS Pattern",
+	"name": "ODS Load Pattern",
 	"properties": {
 		"activities": [
 			{
@@ -46,7 +46,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "DL_ODS",
+						"referenceName": "DL_New",
 						"type": "DatasetReference",
 						"parameters": {
 							"folderName": {
@@ -127,7 +127,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "DL_ODS",
+						"referenceName": "DL_New",
 						"type": "DatasetReference",
 						"parameters": {
 							"folderName": {
@@ -139,7 +139,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "DL_Archive",
+						"referenceName": "DL_Archived",
 						"type": "DatasetReference",
 						"parameters": {
 							"folderName": {
@@ -151,7 +151,7 @@
 				]
 			},
 			{
-				"name": "Delete1",
+				"name": "Delete",
 				"type": "Delete",
 				"dependsOn": [
 					{
@@ -171,7 +171,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"dataset": {
-						"referenceName": "DL_ODS",
+						"referenceName": "DL_New",
 						"type": "DatasetReference",
 						"parameters": {
 							"folderName": {

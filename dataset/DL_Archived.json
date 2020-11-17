@@ -1,5 +1,5 @@
 {
-	"name": "DL_Archive",
+	"name": "DL_Archived",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureBlobStorage1",
@@ -19,7 +19,7 @@
 			"location": {
 				"type": "AzureBlobStorageLocation",
 				"folderPath": {
-					"value": "@{dataset().folderName}/Archive",
+					"value": "@{dataset().folderName}/Archived",
 					"type": "Expression"
 				},
 				"container": "haulotte-tests"
