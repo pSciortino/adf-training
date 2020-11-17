@@ -1,6 +1,82 @@
 {
-	"name": "Upsert Pattern",
+	"name": "UPSERT Pattern",
 	"properties": {
+		"activities": [
+			{
+				"name": "dataflow1",
+				"type": "ExecuteDataFlow",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"dataflow": {
+						"referenceName": "UpsertDataflow",
+						"type": "DataFlowReference",
+						"parameters": {
+							"schemaName": {
+								"value": "'@{pipeline().parameters.schemaName}'",
+								"type": "Expression"
+							},
+							"tableName": {
+								"value": "'@{pipeline().parameters.tableName}'",
+								"type": "Expression"
+							},
+							"businessKey": {
+								"value": "'@{pipeline().parameters.businessKey}'",
+								"type": "Expression"
+							}
+						},
+						"datasetParameters": {
+							"source1": {
+								"schemaName": {
+									"value": "@pipeline().parameters.schemaName",
+									"type": "Expression"
+								},
+								"tableName": {
+									"value": "@pipeline().parameters.tableName",
+									"type": "Expression"
+								}
+							},
+							"sink1": {
+								"schemaName": {
+									"value": "@pipeline().parameters.schemaName",
+									"type": "Expression"
+								},
+								"tableName": {
+									"value": "@pipeline().parameters.tableName",
+									"type": "Expression"
+								}
+							}
+						}
+					},
+					"compute": {
+						"coreCount": 8,
+						"computeType": "General"
+					},
+					"traceLevel": "Coarse"
+				}
+			}
+		],
+		"parameters": {
+			"schemaName": {
+				"type": "string",
+				"defaultValue": "dbo"
+			},
+			"tableName": {
+				"type": "string",
+				"defaultValue": "Attendees"
+			},
+			"businessKey": {
+				"type": "string",
+				"defaultValue": "Name"
+			}
+		},
 		"folder": {
 			"name": "HaulotteTests"
 		},
