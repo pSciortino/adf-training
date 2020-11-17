@@ -143,7 +143,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"dataflow": {
-						"referenceName": "dataflow1",
+						"referenceName": "CustomerLocationDemo",
 						"type": "DataFlowReference"
 					},
 					"compute": {

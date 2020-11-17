@@ -1,12 +1,12 @@
 {
-	"name": "ODSArchive",
+	"name": "DL_Archive",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureBlobStorage1",
 			"type": "LinkedServiceReference"
 		},
 		"parameters": {
-			"FolderName": {
+			"folderName": {
 				"type": "string"
 			}
 		},
@@ -19,7 +19,7 @@
 			"location": {
 				"type": "AzureBlobStorageLocation",
 				"folderPath": {
-					"value": "concat(@{dataset().FolderName}, \"/Archive\")",
+					"value": "concat(@{dataset().folderName}, \"/Archive\")",
 					"type": "Expression"
 				},
 				"container": "haulotte-tests"
