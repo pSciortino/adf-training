@@ -1,12 +1,12 @@
 {
-	"name": "ODSSource",
+	"name": "DL_ODS",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureBlobStorage1",
 			"type": "LinkedServiceReference"
 		},
 		"parameters": {
-			"FolderName": {
+			"folderName": {
 				"type": "string"
 			}
 		},
@@ -19,7 +19,7 @@
 			"location": {
 				"type": "AzureBlobStorageLocation",
 				"folderPath": {
-					"value": "@dataset().FolderName",
+					"value": "@dataset().folderName",
 					"type": "Expression"
 				},
 				"container": "haulotte-tests"
