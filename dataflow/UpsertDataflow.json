@@ -1,0 +1,32 @@
+{
+	"name": "UpsertDataflow",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "SQL_ODS",
+						"type": "DatasetReference"
+					},
+					"name": "source1"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "SQL_DWH",
+						"type": "DatasetReference"
+					},
+					"name": "sink1"
+				}
+			],
+			"transformations": [
+				{
+					"name": "AlterRow1"
+				}
+			],
+			"script": "parameters{\n\tschemaName as string,\n\ttableName as string,\n\tbusinessKey as string\n}\nsource(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false,\n\tisolationLevel: 'READ_UNCOMMITTED',\n\tquery: (with src as (\r\\n    select *, rn = row_number() over(partition by $businessKey order by SnapshotDateTime desc)\r\\n    from $schemaName.$tableName\r\\n)\r\\nselect * \r\\nfrom src\r\\nwhere rn = 1),\n\tformat: 'query') ~> source1\nsource1 alterRow(upsertIf(True())) ~> AlterRow1\nAlterRow1 sink(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tdeletable:false,\n\tinsertable:false,\n\tupdateable:false,\n\tupsertable:true,\n\tkeys:($businessKey),\n\tformat: 'table',\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true) ~> sink1"
+		}
+	}
+}
