@@ -19,7 +19,7 @@
 			"location": {
 				"type": "AzureBlobStorageLocation",
 				"folderPath": {
-					"value": "concat(@{dataset().folderName}, \"/Archive\")",
+					"value": "@{dataset().folderName}/Archive",
 					"type": "Expression"
 				},
 				"container": "haulotte-tests"
