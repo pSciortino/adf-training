@@ -1,0 +1,6 @@
+{
+	"DatabaseName": {
+		"type": "string",
+		"value": "databaseMain"
+	}
+}

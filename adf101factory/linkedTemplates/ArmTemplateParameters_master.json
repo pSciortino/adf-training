@@ -1,0 +1,48 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "adf101factory"
+		},
+		"FileServer1_password": {
+			"value": ""
+		},
+		"AzureBlobStorage1_connectionString": {
+			"value": ""
+		},
+		"AzureSqlDatabase1_connectionString": {
+			"value": ""
+		},
+		"psciortinoLinkedService_password": {
+			"value": ""
+		},
+		"Main_AzureSqlDatabase_connectionString": {
+			"value": ""
+		},
+		"Dynamic_AzureSqlDatabase_connectionString": {
+			"value": ""
+		},
+		"databaseODS_connectionString": {
+			"value": ""
+		},
+		"FileServer1_properties_typeProperties_host": {
+			"value": "C:\\Users\\psciortino\\OneDrive - Business & Decision Benelux S.A\\Documents\\Data Factory bootcamp\\Data"
+		},
+		"FileServer1_properties_typeProperties_userId": {
+			"value": "ADFLUX\\psciortino"
+		},
+		"psciortinoLinkedService_properties_typeProperties_host": {
+			"value": "C:\\Users\\psciortino\\OneDrive - Business & Decision Benelux S.A\\Documents\\Data Factory bootcamp\\"
+		},
+		"psciortinoLinkedService_properties_typeProperties_userId": {
+			"value": "ADFLUX\\psciortino"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}
